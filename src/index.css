@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply flex flex-col justify-center items-center text-white bg-gray-950;
+  }
+}
+
+@layer components {
+  h1 {
+    @apply text-5xl text-center font-black text-indigo-600 m-10;
+  }
+  .board {
+    @apply w-80 h-80 grid grid-cols-3 grid-rows-3 cursor-pointer relative;
+  }
+  .tile {
+    @apply flex justify-center items-center text-current text-4xl;
+  }
+  .right-border {
+    @apply border-solid border-r-4 border-indigo-600;
+  }
+  .bottom-border {
+    @apply border-solid border-b-4 border-indigo-600;
+  }
+  .strike {
+    @apply absolute bg-red-500;
+  }
+  .strike-row-1 {
+    @apply w-full h-1 top-[16%];
+  }
+  .strike-row-2 {
+    @apply w-full h-1 top-[50%];
+  }
+  .strike-row-3 {
+    @apply w-full h-1 top-[84%];
+  }
+  .strike-column-1 {
+    @apply h-full w-1 left-[16%];
+  }
+  .strike-column-2 {
+    @apply h-full w-1 left-[49%];
+  }
+  .strike-column-3 {
+    @apply h-full w-1 left-[84%];
+  }
+  .strike-diagonal-1 {
+    @apply w-[90%] h-1 top-[49%] left-[5%] skew-y-[45deg];
+  }
+  .strike-diagonal-2 {
+    @apply w-[90%] h-1 top-[49%] left-[5%] skew-y-[-45deg];
+  }
+
+  .game-over {
+    @apply text-center border-4 border-indigo-600 border-dotted p-3 mt-12 text-2xl animate-bounce;
+  }
+
+  .reset-button {
+    @apply mt-12 p-5 bg-cyan-700 text-white w-full text-2xl;
+  }
+}
+
+.x-hover:hover::after {
+  content: "X";
+  opacity: 0.4;
+}
+
+.o-hover:hover::after {
+  content: "O";
+  opacity: 0.4;
+}
